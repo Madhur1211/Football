@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.football.PlayerViewController">
+   <children>
+      <Label layoutX="196.0" layoutY="14.0" prefHeight="72.0" prefWidth="207.0" text="Players List">
+         <font>
+            <Font size="39.0" />
+         </font>
+      </Label>
+      <TableView fx:id="tableView" layoutX="33.0" layoutY="99.0" prefHeight="246.0" prefWidth="533.0">
+        <columns>
+          <TableColumn fx:id="colFName" maxWidth="110.0" prefWidth="110.0" text="First Name" />
+          <TableColumn fx:id="colLName" maxWidth="110.0" minWidth="110.0" prefWidth="138.4000244140625" text="Last Name" />
+            <TableColumn fx:id="colFullName" maxWidth="110.0" minWidth="0.0" prefWidth="133.5999755859375" text="Full Name" />
+            <TableColumn fx:id="colAge" maxWidth="110.0" prefWidth="104.79998779296875" text="Age" />
+            <TableColumn fx:id="colCountry" maxWidth="110.0" prefWidth="104.79998779296875" text="Country" />
+        </columns>
+      </TableView>
+   </children>
+</AnchorPane>

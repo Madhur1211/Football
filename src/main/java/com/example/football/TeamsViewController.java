@@ -38,15 +38,10 @@ public class TeamsViewController {
             Gson gson = new Gson();
             teamsDirectory teamsDirectory = gson.fromJson(jsonstring, teamsDirectory.class);
 
-            // Assuming you have a TableView and a TableColumn named tableView and teamNameColumn, respectively
             tableView.getItems().clear(); // Clear the existing items in the TableView
 
             // Create a TableColumn to display team names
             teamNameColumn.setCellValueFactory(new PropertyValueFactory<>("name"));
-
-            // Add the teamNameColumn to the TableView
-            tableView.getColumns().clear(); // Clear existing columns
-            tableView.getColumns().add(teamNameColumn);
 
             // Add the teams to the TableView
             tableView.getItems().addAll(teamsDirectory.getTeams());
