@@ -42,7 +42,6 @@ public class TeamsViewController {
             tableView.getItems().clear(); // Clear the existing items in the TableView
 
             // Create a TableColumn to display team names
-            TableColumn<Team, String> teamNameColumn = new TableColumn<>("Team Name");
             teamNameColumn.setCellValueFactory(new PropertyValueFactory<>("name"));
 
             // Add the teamNameColumn to the TableView
