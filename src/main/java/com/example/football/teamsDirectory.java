@@ -6,7 +6,8 @@ import com.google.gson.annotations.SerializedName;
 import java.util.List;
 
 public class teamsDirectory {
-    @SerializedName("teams")
+
+    @SerializedName("response")
     public List<Team> teams;
 
     // Other methods if needed
