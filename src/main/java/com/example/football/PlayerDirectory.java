@@ -6,13 +6,13 @@ import java.util.List;
 
 public class PlayerDirectory {
     @SerializedName("response")
-    public List<Player> Players;
+    public List<PlayerData> playerData;
 
-    public List<Player> getPlayers() {
-        return Players;
+    public List<PlayerData> getPlayerData() {
+        return playerData;
     }
 
-    public void setPlayers(List<Player> players) {
-        Players = players;
+    public void setPlayerData(List<PlayerData> playerData) {
+        this.playerData = playerData;
     }
 }

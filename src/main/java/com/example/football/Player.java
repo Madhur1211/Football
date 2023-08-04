@@ -4,38 +4,38 @@ import com.google.gson.annotations.SerializedName;
 
 public class Player {
     @SerializedName("firstname")
-    public String fName;
+    public String firstName;
     @SerializedName("lastname")
-    public String lName;
+    public String lastName;
     @SerializedName("name")
     public String fullName;
     @SerializedName("age")
     public int age;
-    @SerializedName("Country")
-    public String country;
+    @SerializedName("birth")
+    public BirthData birthData;
 
-    public Player(String fName, String lName, String fullName, int age, String country) {
-        this.fName = fName;
-        this.lName = lName;
+    public Player(String firstName, String lastName, String fullName, int age, BirthData birthData) {
+        this.firstName = firstName;
+        this.lastName = lastName;
         this.fullName = fullName;
         this.age = age;
-        this.country = country;
+        this.birthData = birthData;
     }
 
-    public String getfName() {
-        return fName;
+    public String getFirstName() {
+        return firstName;
     }
 
-    public void setfName(String fName) {
-        this.fName = fName;
+    public void setFirstName(String firstName) {
+        this.firstName = firstName;
     }
 
-    public String getlName() {
-        return lName;
+    public String getLastName() {
+        return lastName;
     }
 
-    public void setlName(String lName) {
-        this.lName = lName;
+    public void setLastName(String lastName) {
+        this.lastName = lastName;
     }
 
     public String getFullName() {
@@ -54,11 +54,11 @@ public class Player {
         this.age = age;
     }
 
-    public String getCountry() {
-        return country;
+    public BirthData getBirthData() {
+        return birthData;
     }
 
-    public void setCountry(String country) {
-        this.country = country;
+    public void setBirthData(BirthData birthData) {
+        this.birthData = birthData;
     }
 }

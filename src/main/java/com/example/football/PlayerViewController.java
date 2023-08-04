@@ -1,6 +1,7 @@
 package com.example.football;
 
 import com.google.gson.Gson;
+import javafx.beans.property.SimpleStringProperty;
 import javafx.fxml.FXML;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
@@ -11,6 +12,7 @@ import java.net.URI;
 import java.net.http.HttpClient;
 import java.net.http.HttpRequest;
 import java.net.http.HttpResponse;
+import java.util.List;
 
 public class PlayerViewController {
 
@@ -32,62 +34,52 @@ public class PlayerViewController {
     @FXML
     private TableColumn<Player, String> colLName;
 
-    public void initialize(){
-
-      /*  colFName.setCellValueFactory(new PropertyValueFactory<>("firstName"));
+    public void initialize() {
+        colFName.setCellValueFactory(new PropertyValueFactory<>("firstName"));
         colLName.setCellValueFactory(new PropertyValueFactory<>("lastName"));
         colFullName.setCellValueFactory(new PropertyValueFactory<>("fullName"));
         colAge.setCellValueFactory(new PropertyValueFactory<>("age"));
-        colCountry.setCellValueFactory(new PropertyValueFactory<>("country"));
+        colCountry.setCellValueFactory(cellData -> {
+            Player player = cellData.getValue();
+            String country = player.getBirthData().getCountry();
+            return new SimpleStringProperty(country);
+        });
 
-
-        //fetchDataFromAPI();*/
+        fetchDataFromAPI();
     }
 
-    public static String makeGetRequest(String apiUrl, String apiKey) throws IOException, InterruptedException {
-        HttpRequest request = HttpRequest.newBuilder()
-                .uri(URI.create("https://api-football-v1.p.rapidapi.com/v3/players?team=33&season=2020"))
-                .header("X-RapidAPI-Key", "3dcae264e1mshfddec9c0daf260ep18f802jsnc3a4c65c2db1")
-                .header("X-RapidAPI-Host", "api-football-v1.p.rapidapi.com")
-                .method("GET", HttpRequest.BodyPublishers.noBody())
-                .build();
-        HttpResponse<String> response = HttpClient.newHttpClient().send(request, HttpResponse.BodyHandlers.ofString());
-        String jsonResponse = response.body();
-        return jsonResponse;
-    }
-
-    public static void main(String[] args){
+    private void fetchDataFromAPI() {
         try {
             String jsonResponse = makeGetRequest("https://api-football-v1.p.rapidapi.com/v3/players?team=33&season=2020", "3dcae264e1mshfddec9c0daf260ep18f802jsnc3a4c65c2db1");
-            System.out.println(jsonResponse);
 
             Gson gson = new Gson();
             PlayerDirectory playerDirectory = gson.fromJson(jsonResponse, PlayerDirectory.class);
-            System.out.println(playerDirectory.Players.size());
-            for(Player p: playerDirectory.Players){
-                System.out.println("First Name: " + p.fName);
-                System.out.println("Last Name: " + p.lName);
-                System.out.println("Full Name: " + p.fullName);
-                System.out.println("Age: " + p.age);
-                System.out.println("Country: " + p.country);
-                System.out.println("-----------------------");
+            List<PlayerData> playerDataList = playerDirectory.getPlayerData();
+            if (playerDataList != null && !playerDataList.isEmpty()) {
+                for (PlayerData playerData : playerDataList) {
+                    Player player = playerData.getPlayer();
+                    if (player != null) {
+                        tableView.getItems().add(player);
+                    }
+                }
             }
-           /* tableView.getItems().clear();
 
-            colFName.setCellValueFactory(new PropertyValueFactory<>("fName"));
-            colLName.setCellValueFactory(new PropertyValueFactory<>("lName"));
-            colFullName.setCellValueFactory(new PropertyValueFactory<>("fullName"));
-            colAge.setCellValueFactory(new PropertyValueFactory<>("age"));
-            colCountry.setCellValueFactory(new PropertyValueFactory<>("country"));
-
-            tableView.getItems().addAll(playerDirectory.getPlayers()); */
-
-        } catch (IOException e) {
-            throw new RuntimeException(e);
-        } catch (InterruptedException e) {
+        } catch (IOException | InterruptedException e) {
             throw new RuntimeException(e);
         }
 
     }
-}
 
+    public static String makeGetRequest(String apiUrl, String apiKey) throws IOException, InterruptedException {
+        HttpRequest request = HttpRequest.newBuilder()
+                .uri(URI.create(apiUrl))
+                .header("X-RapidAPI-Key", apiKey)
+                .header("X-RapidAPI-Host", "api-football-v1.p.rapidapi.com")
+                .method("GET", HttpRequest.BodyPublishers.noBody())
+                .build();
+
+        HttpResponse<String> response = HttpClient.newHttpClient().send(request, HttpResponse.BodyHandlers.ofString());
+        return response.body();
+    }
+
+}
