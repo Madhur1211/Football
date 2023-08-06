@@ -1,0 +1,18 @@
+/* styles.css */
+
+/* Styling for table rows */
+.table-row-cell:even {
+    -fx-background-color: #f2f2f2; /* Light gray background for even rows */
+}
+
+.table-row-cell:odd {
+    -fx-background-color: #e0e0e0; /* Darker gray background for odd rows */
+}
+
+/* Styling for the button */
+#switchScene {
+    -fx-background-color: #4CAF50; /* Green background color */
+    -fx-text-fill: white; /* White text color */
+    -fx-font-size: 14px;
+    -fx-pref-width: 120px; /* Set preferred width for the button */
+}

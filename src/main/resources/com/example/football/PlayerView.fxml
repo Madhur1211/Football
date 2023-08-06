@@ -9,9 +9,9 @@
 
 <AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.football.PlayerViewController">
    <children>
-      <Label layoutX="196.0" layoutY="14.0" prefHeight="72.0" prefWidth="207.0" text="Players List">
+      <Label layoutX="193.0" layoutY="14.0" prefHeight="72.0" prefWidth="213.0" text="Top Players">
          <font>
-            <Font size="39.0" />
+            <Font name="System Bold Italic" size="39.0" />
          </font>
       </Label>
       <TableView fx:id="tableView" layoutX="33.0" layoutY="99.0" prefHeight="246.0" prefWidth="533.0">
@@ -23,6 +23,6 @@
             <TableColumn fx:id="colCountry" maxWidth="110.0" prefWidth="104.79998779296875" text="Country" />
         </columns>
       </TableView>
-      <Button fx:id="btTeam" layoutX="418.0" layoutY="361.0" onAction="#changeViewToTeams" mnemonicParsing="false" prefHeight="26.0" prefWidth="79.0" text="View Teams" />
+      <Button fx:id="btTeam" layoutX="418.0" layoutY="361.0" mnemonicParsing="false" onAction="#changeViewToTeams" prefHeight="26.0" prefWidth="79.0" text="View Teams" />
    </children>
 </AnchorPane>

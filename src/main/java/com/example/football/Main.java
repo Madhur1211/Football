@@ -19,13 +19,13 @@ public class Main extends Application {
         stage.setScene(scene);
         stage.show();
 
-        //Icon setup
-        StackPane root = new StackPane();
-        Scene scene1 = new Scene(root, 400, 300);
-        Image icon = new Image(getClass().getResourceAsStream("/com/example/football/image/footballIcon.jpg"));
+        // Load and set the application icon
+        Image icon = new Image(getClass().getResourceAsStream("/com/example/football/football.jpg"));
         stage.getIcons().add(icon);
-        stage.setScene(scene);
+
+
         stage.show();
+
     }
 
     public static void main(String[] args) {

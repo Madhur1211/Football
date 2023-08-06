@@ -14,7 +14,7 @@ public class SceneManager {
         FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource(fxmlName));
         Scene scene = new Scene(fxmlLoader.load(), 520, 540);
         Stage stage = (Stage)((Node)event.getSource()).getScene().getWindow();
-        stage.setTitle("Driving License Data");
+        stage.setTitle("Football");
         stage.setScene(scene);
         stage.show();
     }
