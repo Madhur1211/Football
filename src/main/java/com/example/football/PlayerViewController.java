@@ -2,7 +2,9 @@ package com.example.football;
 
 import com.google.gson.Gson;
 import javafx.beans.property.SimpleStringProperty;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.scene.control.Button;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
@@ -15,6 +17,9 @@ import java.net.http.HttpResponse;
 import java.util.List;
 
 public class PlayerViewController {
+
+    @FXML
+    private Button btTeam;
 
     @FXML
     private TableView<Player> tableView;
@@ -81,5 +86,12 @@ public class PlayerViewController {
         HttpResponse<String> response = HttpClient.newHttpClient().send(request, HttpResponse.BodyHandlers.ofString());
         return response.body();
     }
+
+    @FXML
+    public void changeViewToTeams(ActionEvent event) throws IOException {
+        // Switch to the TableView scene when the button is clicked
+        SceneManager.changeScene(event, "teamView.fxml");
+    }
+
 
 }

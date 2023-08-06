@@ -2,12 +2,14 @@ package com.example.football;
 
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
 
+import java.io.IOException;
 import java.lang.reflect.Type;
 import java.util.List;
 
@@ -50,6 +52,13 @@ public class TeamsViewController {
             e.printStackTrace();
         }
     }
+
+    @FXML
+    public void changeViewToPlayers(ActionEvent event) throws IOException {
+        // Switch to the TableView scene when the button is clicked
+        SceneManager.changeScene(event, "PlayerView.fxml");
+    }
+
 
 
 

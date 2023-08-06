@@ -7,21 +7,21 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane fx:controller="com.example.football.TeamsViewController" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.football.TeamsViewController">
    <children>
-      <Label layoutX="210.0" layoutY="33.0" prefHeight="61.0" prefWidth="178.0" text="Laliga Teams">
+      <Label layoutX="177.0" layoutY="30.0" prefHeight="62.0" prefWidth="243.0" text="WorldCup Teams">
          <font>
-            <Font name="System Italic" size="30.0" />
+            <Font name="System Bold Italic" size="30.0" />
          </font>
       </Label>
-      <TableView fx:id="tableView" layoutX="222.0" layoutY="102.0" prefHeight="264.0" prefWidth="153.0">
+      <TableView fx:id="tableView" layoutX="199.0" layoutY="103.0" prefHeight="264.0" prefWidth="200.0">
         <columns>
           <TableColumn minWidth="0.0" prefWidth="0.0" text="C2" />
-            <TableColumn fx:id="teamNameColumn" prefWidth="150.4000244140625" text="Teams" />
+            <TableColumn fx:id="teamNameColumn" prefWidth="200.0" text="Teams" />
             <TableColumn minWidth="0.0" prefWidth="0.0" text="C2" />
             <TableColumn minWidth="0.0" prefWidth="0.0" text="C2" />
         </columns>
       </TableView>
-      <Button fx:id="switchScene" layoutX="413.0" layoutY="341.0" mnemonicParsing="false" text="Flags" />
+      <Button fx:id="switchScene" layoutX="413.0" layoutY="341.0" mnemonicParsing="false" onAction="#changeViewToPlayers" text="View Players" />
    </children>
 </AnchorPane>
