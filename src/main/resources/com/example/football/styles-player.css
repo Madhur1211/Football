@@ -1,0 +1,33 @@
+/* styles-player.css */
+
+/* Styling for table rows */
+.table-row-cell:even {
+    -fx-background-color: #f9f3cb; /* Light yellow background for even rows */
+}
+
+.table-row-cell:odd {
+    -fx-background-color: #f1e5ac; /* Pale yellow background for odd rows */
+}
+
+/* Colorful rows */
+.table-row-cell:selected {
+    -fx-background-color: #FFA500; /* Orange background for selected rows */
+}
+
+.table-row-cell:filled:selected {
+    -fx-background-color: #00cc66; /* Green background for filled selected rows */
+}
+
+/* Background image */
+.anchor-pane {
+    -fx-background-image: url("@PlayerBackground.jpg");
+    -fx-background-size: cover;
+}
+
+/* Styling for the button */
+#btTeam {
+    -fx-background-color: #0099cc; /* Blue background for the button */
+    -fx-text-fill: white; /* White text color */
+    -fx-font-size: 14px;
+    -fx-pref-width: 100px; /* Set preferred width for the button */
+}

@@ -2,27 +2,33 @@
 
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
-<?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.football.PlayerViewController">
-   <children>
-      <Label layoutX="193.0" layoutY="14.0" prefHeight="72.0" prefWidth="213.0" text="Top Players">
-         <font>
-            <Font name="System Bold Italic" size="39.0" />
-         </font>
-      </Label>
-      <TableView fx:id="tableView" layoutX="33.0" layoutY="99.0" prefHeight="246.0" prefWidth="533.0">
-        <columns>
-          <TableColumn fx:id="colFName" maxWidth="110.0" prefWidth="110.0" text="First Name" />
-          <TableColumn fx:id="colLName" maxWidth="110.0" minWidth="110.0" prefWidth="138.4000244140625" text="Last Name" />
-            <TableColumn fx:id="colFullName" maxWidth="110.0" minWidth="0.0" prefWidth="133.5999755859375" text="Full Name" />
-            <TableColumn fx:id="colAge" maxWidth="110.0" prefWidth="104.79998779296875" text="Age" />
-            <TableColumn fx:id="colCountry" maxWidth="110.0" prefWidth="104.79998779296875" text="Country" />
-        </columns>
-      </TableView>
-      <Button fx:id="btTeam" layoutX="418.0" layoutY="361.0" mnemonicParsing="false" onAction="#changeViewToTeams" prefHeight="26.0" prefWidth="79.0" text="View Teams" />
-   </children>
+<?import javafx.scene.control.TableColumn?>
+<AnchorPane prefHeight="400.0" prefWidth="600.0" stylesheets="@styles-player.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.football.PlayerViewController">
+    <!-- Add the background image -->
+    <children>
+        <ImageView fitHeight="400" fitWidth="600">
+            <Image url="@PlayerBackground.jpg" />
+        </ImageView>
+        <Label layoutX="193.0" layoutY="14.0" prefHeight="72.0" prefWidth="213.0" text="Top Players">
+            <font>
+                <Font name="System Bold Italic" size="39.0" />
+            </font>
+        </Label>
+        <TableView fx:id="tableView" layoutX="33.0" layoutY="99.0" prefHeight="246.0" prefWidth="533.0">
+            <columns>
+                <TableColumn fx:id="colFName" maxWidth="110.0" prefWidth="110.0" text="First Name" />
+                <TableColumn fx:id="colLName" maxWidth="110.0" minWidth="110.0" prefWidth="138.4000244140625" text="Last Name" />
+                <TableColumn fx:id="colFullName" maxWidth="110.0" minWidth="0.0" prefWidth="133.5999755859375" text="Full Name" />
+                <TableColumn fx:id="colAge" maxWidth="110.0" prefWidth="104.79998779296875" text="Age" />
+                <TableColumn fx:id="colCountry" maxWidth="110.0" prefWidth="104.79998779296875" text="Country" />
+            </columns>
+        </TableView>
+        <Button fx:id="btTeam" layoutX="418.0" layoutY="361.0" mnemonicParsing="false" onAction="#changeViewToTeams" prefHeight="26.0" prefWidth="79.0" text="View Teams" />
+    </children>
 </AnchorPane>

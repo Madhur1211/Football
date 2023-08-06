@@ -9,9 +9,13 @@
     -fx-background-color: #e0e0e0; /* Darker gray background for odd rows */
 }
 
+.table-row-cell:filled:selected {
+    -fx-background-color: #00cc66; /* Green background for filled selected rows */
+}
+
 /* Styling for the button */
 #switchScene {
-    -fx-background-color: #4CAF50; /* Green background color */
+    -fx-background-color: #00a8e8; /* Light blue background color */
     -fx-text-fill: white; /* White text color */
     -fx-font-size: 14px;
     -fx-pref-width: 120px; /* Set preferred width for the button */
