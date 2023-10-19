@@ -35,6 +35,6 @@ Installation
       •	JSON libraries for handling and parsing complex JSON data.
       All necessary dependencies are included in the project setup.
       Contact Information
-      If you encounter any issues, have questions, or wish to contribute to this project, please feel free to contact the project maintainer at your.email@example.com.
+      If you encounter any issues, have questions, or wish to contribute to this project, please feel free to contact the project maintainer at sharma.madhur121102@gmail.com.
       Enjoy exploring comprehensive data on national football teams and players with this Java application. Thank you for using this application, and we hope you find it both informative and user-friendly!
 
